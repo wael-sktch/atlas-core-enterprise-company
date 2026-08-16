@@ -1,53 +1,42 @@
-# ENG-001 — Network Visibility & Traffic Baseline
+# ENG-001 — Network Visibility
+
+## Overview
+
+ENG-001 is the first security engineering engagement performed inside the Atlas Core enterprise laboratory.
+
+The objective was to validate basic network visibility and communication between the management network and the AtlasBank application hosted in the DMZ.
+
+This engagement establishes the baseline for future security testing, detection engineering, and incident-response exercises.
+
+---
 
 ## Objective
 
-Establish a baseline of normal network traffic within the
-Atlas Core Enterprise environment.
+Validate:
 
-## Environment
+- pfSense interface configuration
+- Network segmentation
+- Management-to-DMZ connectivity
+- ARP behavior
+- HTTP traffic visibility
+- AtlasBank web-server reachability
+- Basic application endpoint discovery
+- Security-tool command validation
 
-- pfSense
-- Windows 11
-- Kali Linux
-- Active Directory
-- DMZ
-- WAF01
-- AtlasBank
-- Internet connectivity
+---
 
-## Network Segments
+## Atlas Core Network
 
-| Zone | Network | Purpose |
+| Zone | Network | pfSense Gateway |
 |---|---|---|
-| USERS | 10.10.10.0/24 | User endpoints |
-| SERVERS | 10.10.20.0/24 | Enterprise servers |
-| DMZ | 10.10.30.0/24 | Internet-facing services |
-| MGMT | 10.10.40.0/24 | Management/security systems |
+| USERS | 10.10.10.0/24 | 10.10.10.1 |
+| SERVERS | 10.10.20.0/24 | 10.10.20.1 |
+| DMZ | 10.10.30.0/24 | 10.10.30.1 |
+| MGMT | 10.10.40.0/24 | 10.10.40.1 |
 
-## Tools
+The AtlasBank web application used during this engagement was located in the DMZ.
 
-- pfSense
-- Wireshark
-- Kali Linux
-- Windows
+Observed application server:
 
-## Methodology
-
-PLAN → BUILD → BASELINE → TEST → DETECT →
-INVESTIGATE → REMEDIATE → RETEST → DOCUMENT → PUBLISH
-
-## Objective of Day 001
-
-Identify and understand:
-
-- ARP
-- ICMP
-- DNS
-- DHCP
-- TCP
-- TLS
-
-## Status
-
-In Progress
+```text
+10.10.30.5
