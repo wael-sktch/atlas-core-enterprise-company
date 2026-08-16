@@ -9,22 +9,52 @@ Establish a repeatable baseline for observing Atlas Core traffic before introduc
 - Authorized Windows/Kali systems
 - Wireshark
 
-## Planned exercises
-- ICMP request/reply
-- DNS query/response
-- TCP connection establishment
-- TLS handshake
-- DHCP/DORA where observable
+## Completed exercises
 
-## Evidence to capture
-- Source/destination IPs
-- Protocol
-- Packet sequence
-- Relevant Wireshark filters
-- Before/after observations
+### 1. pfSense Interface Validation
 
-## Result
-_To be completed during the live lab session._
+Validated the Atlas Core network interfaces and confirmed:
 
-## Lessons learned
-_To be completed during the live lab session._
+| Interface | Network | Gateway |
+|---|---|---|
+| WAN | 192.168.3.0/24 | 192.168.3.1 |
+| SERVERS | 10.10.20.0/24 | 10.10.20.1 |
+| USERS | 10.10.10.0/24 | 10.10.10.1 |
+| DMZ | 10.10.30.0/24 | 10.10.30.1 |
+| MGMT | 10.10.40.0/24 | 10.10.40.1 |
+
+Evidence:
+
+- `ENG-001-network-visibility/evidence/01-pfsense-interface-assignments`
+- `ENG-001-network-visibility/evidence/02-pfsense-interface-status`
+
+---
+
+### 2. ARP Traffic Analysis
+
+Captured and analyzed ARP traffic on the MGMT interface using Wireshark.
+
+Observed:
+
+- ARP requests
+- ARP replies
+- Broadcast discovery traffic
+- Communication between the management host and pfSense
+
+Evidence:
+
+- `03-wireshark-arp`
+
+---
+
+### 3. HTTP Traffic Analysis
+
+Captured HTTP communication between the MGMT network and AtlasBank in the DMZ.
+
+Observed:
+
+```text
+Source:      10.10.40.10
+Destination: 10.10.30.5
+Protocol:    HTTP
+Destination: TCP/80
