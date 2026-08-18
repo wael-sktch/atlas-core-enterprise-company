@@ -1,0 +1,42 @@
+[
+  {
+    "id": "ENG-001",
+    "title": "Network Visibility",
+    "status": "COMPLETED",
+    "description": "Wireshark traffic analysis and protocol baselining across the Atlas Core environment.",
+    "slug": "ENG-001-network-visibility",
+    "url": "https://github.com/wael-sktch/atlas-core-enterprise-company/tree/main/engagements/ENG-001-network-visibility"
+  },
+  {
+    "id": "ENG-002",
+    "title": "ENG 002 Vlan Segmentation",
+    "status": "PLANNED",
+    "description": "",
+    "slug": "ENG-002-vlan-segmentation",
+    "url": "https://github.com/wael-sktch/atlas-core-enterprise-company/tree/main/engagements/ENG-002-vlan-segmentation"
+  },
+  {
+    "id": "ENG-003",
+    "title": "ENG 003 Snort Ids",
+    "status": "PLANNED",
+    "description": "",
+    "slug": "ENG-003-snort-ids",
+    "url": "https://github.com/wael-sktch/atlas-core-enterprise-company/tree/main/engagements/ENG-003-snort-ids"
+  },
+  {
+    "id": "ENG-004",
+    "title": "ENG 004 Snort Ips",
+    "status": "PLANNED",
+    "description": "",
+    "slug": "ENG-004-snort-ips",
+    "url": "https://github.com/wael-sktch/atlas-core-enterprise-company/tree/main/engagements/ENG-004-snort-ips"
+  },
+  {
+    "id": "ENG-005",
+    "title": "ENG 005 Web Attack Detection",
+    "status": "PLANNED",
+    "description": "",
+    "slug": "ENG-005-web-attack-detection",
+    "url": "https://github.com/wael-sktch/atlas-core-enterprise-company/tree/main/engagements/ENG-005-web-attack-detection"
+  }
+]
