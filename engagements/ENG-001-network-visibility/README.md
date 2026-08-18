@@ -1,3 +1,10 @@
+---
+id: ENG-001
+title: Network Visibility
+status: COMPLETED
+description: Wireshark traffic analysis and protocol baselining across the Atlas Core environment.
+---
+
 # ENG-001 — Network Visibility
 
 ## Overview
@@ -40,3 +47,5 @@ Observed application server:
 
 ```text
 10.10.30.5
+
+

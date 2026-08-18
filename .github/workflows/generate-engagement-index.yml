@@ -1,0 +1,45 @@
+name: Generate Engagement Index
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "engagements/**"
+      - "automation/**"
+      - ".github/workflows/generate-engagement-index.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  generate-index:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate engagement index
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Run generator
+        run: node automation/generate-index.js
+
+      - name: Commit generated index
+        run: |
+          git config user.name "atlas-core-automation"
+          git config user.email "actions@github.com"
+
+          git add engagement-index.json
+
+          if git diff --cached --quiet; then
+            echo "No engagement index changes."
+          else
+            git commit -m "chore: update engagement index"
+            git push
+          fi
